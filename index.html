@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="corpo">
+
+    <header>
+        <h1>Indice de Massa Corporal</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#comomedir">Como medir</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+            </ul>
+        </nav>
+
+        <section id="Inicio">
+            <h2>Inicio</h2>
+            <div class="card">
+                <p>Na área da saúde, há várias siglas — e, na maioria das vezes, não fazemos ideia do que elas
+                    significam. Um exemplo disso é o IMC, que tem um significado importante, ainda que desconhecido por
+                    muitas pessoas.
+
+                    Logo de cara, vamos dizer que o IMC é a sigla correspondente ao conceito de Índice de Massa
+                    Corporal. Isso tem a ver com o peso que vemos na balança, quando verificamos se ganhamos ou perdemos
+                    alguns quilinhos.
+
+                    Então, que tal saber como calcular o IMC e descobrir a sua relevância para os cuidados com a saúde?
+                    Continue a leitura e confira!</p>
+            </div>
+        </section>
+
+        <section id="como medir">
+            <h2>como medir</h2>
+            <div class="card">
+                <p>Fazer o cálculo do IMC é bem fácil. Primeiro, você vai multiplicar o valor de sua altura (em metros) por ele mesmo. Por exemplo, se você medir 1,60 metros, o cálculo será:
+
+                    1,6 x 1,6 = 2,56
+                    Em seguida, é hora de trazer o seu peso para a equação. Ele deverá ser dividido pelo valor obtido acima. Pensando no mesmo exemplo anterior, se o seu peso for 60 quilos, a conta será:
+                    
+                    60 ÷ 2,56 = 23,43
+                    Essa pessoa, portanto, tem um IMC considerado como sobrepeso.</p>
+            </div>
+        </section>
+
+
+
+        <label for="altura">Altura:</label>
+        <input type="number" name="altura" id="altura">
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" name="peso" id="peso">
+
+        <button onclick="calcImc()">Calcular IMC </button>
+
+        <p>Seu índice de massa corporal é: <span id="resultado"></span> /p>
+
+            <button onclick="mudarTema()">Mudar tema</button>
+
+
+
+            <script>
+                function calcImc() {
+                    const altura = document.getElementById("altura").value;
+
+                    const peso = document.getElementById("peso").value;
+
+                    const resultado = peso / (altura ** 2);
+
+                    document.getElementById("resultado").textContent = resultado.toFixed(2);
+
+
+
+                }
+
+                function mudarTema() {
+                    const corpo = document.getElementById("corpo");
+
+                    corpo.style.backgroundColor = corpo.style.backgroundColor === "white" ? "blue" : "white";
+
+                }
+
+
+            </script>
+
+
+
+
+
+        <footer>
+            <p> &copy; João vitor | Todos os direitos reservados </p>
+        </footer>
+
+
+
+</body>
+
+</html>
